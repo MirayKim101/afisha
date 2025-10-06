@@ -1,0 +1,15 @@
+// Общие переменные
+@use "common/variables";
+
+
+// Общие стили
+@use "common/style";
+
+// UI
+@use "common/ui";
+
+// Блоки
+@use "blocks";
+
+// Медиа
+@use "media-query";

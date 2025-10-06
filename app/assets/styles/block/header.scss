@@ -1,0 +1,51 @@
+@use '../common/variables';
+
+.header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding-top: clamp(2rem, 1.74rem + 1.15vw, 3.125rem);
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__navigation {
+    &-list {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+
+      &-item {
+        &-link {
+          color: rgba(255, 255, 255, 0.80);
+          font-family: variables.$FontFamily;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+
+          &.router-link-active {
+            color: #FFF;
+            font-family: variables.$FontFamily;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+          }
+        }
+      }
+    }
+  }
+
+  &__panel {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+  }
+}
+
+

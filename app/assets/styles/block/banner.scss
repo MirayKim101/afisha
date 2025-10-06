@@ -1,0 +1,85 @@
+@use '../common/variables';
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    max-width: 537px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      &-subtitle {
+        color: #FFF;
+        font-family: variables.$FontFamily;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      &-title {
+        color: #FFF;
+        font-family: variables.$FontFamily;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      color: #FCF8EB;
+      font-family: variables.$FontFamily;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.30) 0.01%, rgba(0, 0, 0, 0.30) 100%);
+    }
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+  }
+}
