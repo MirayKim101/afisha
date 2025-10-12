@@ -16,7 +16,8 @@
               {{ link.title }}
             </NuxtLink>
           </li>
-
+          <button @click="isVisibleModal = true" style="color: #fff;">Регистрация</button>
+          <button @click="showModal = true" style="color: #fff;">Вход</button>
         </ul>
       </nav>
 
@@ -39,9 +40,42 @@
       </div>
     </div>
   </header>
+
+  <AuthModal :show="showModal" @close="showModal = false">
+    <template #heading>
+      <h2> Вход в личный кабинет</h2>
+      <button @click="showModal = false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53" fill="none">
+          <rect x="12.374" y="13.7891" width="2" height="37" transform="rotate(-45 12.374 13.7891)" fill="black"/>
+          <rect x="13.7886" y="39.9517" width="2" height="37" transform="rotate(-135 13.7886 39.9517)" fill="black"/>
+        </svg>
+      </button>
+
+    </template>
+  </AuthModal>
+
+  <RegistrationModal :isVisibleModal="isVisibleModal" @close="isVisibleModal = false">
+    <template #heading>
+      <h2> Регистрация</h2>
+      <button @click="isVisibleModal = false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53" fill="none">
+          <rect x="12.374" y="13.7891" width="2" height="37" transform="rotate(-45 12.374 13.7891)" fill="black"/>
+          <rect x="13.7886" y="39.9517" width="2" height="37" transform="rotate(-135 13.7886 39.9517)" fill="black"/>
+        </svg>
+      </button>
+
+    </template>
+  </RegistrationModal>
 </template>
 
 <script setup>
+
+import AuthModal from "~/components/modals/AuthModal.vue";
+import RegistrationModal from "~/components/modals/RegistrationModal.vue";
+
+const showModal = ref(false)
+const isVisibleModal = ref(false)
+
 
 const links = ref([
   {title: 'Главная', link: '/'},
@@ -49,7 +83,8 @@ const links = ref([
   {title: 'События', link: '/asdwd'},
   {title: 'Фотоотчеты', link: '/adwsd'},
   {title: 'Заказать фотосъемку', link: '/ww'},
-  {title: 'Модалки', link: '/modals'},
+  {title: 'Личный кабинет', link: '/account'},
+
 ])
 </script>
 
